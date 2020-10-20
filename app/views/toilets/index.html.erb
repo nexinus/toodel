@@ -1,0 +1,7 @@
+<h1>This is the toilets index page</h1>
+
+<ul>
+  <% @toilets.each do |toilet| %>
+    <li><%= toilet.name %></li>
+  <% end %>
+</ul>
