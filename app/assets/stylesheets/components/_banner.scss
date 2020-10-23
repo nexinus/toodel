@@ -1,8 +1,18 @@
 .home-banner {
-  background-image: url(home_banner.jpg);
+  background: linear-gradient(45deg, black, transparent), url(home_banner.jpg);
+  // background-image: url(home_banner.jpg);
   background-size: cover;
   height: 100vh;
   color: #eee;
   text-align: center;
   padding-top: 40vh;
+  text-align-last: left;
+}
+
+.home-banner-items {
+  padding: 16px;
+}
+
+p {
+  font-size: 16px;
 }
