@@ -45,3 +45,29 @@
   top: -20px;
   width: 40px;
 }
+
+.card-body {
+  overflow: hidden;
+  background: black;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-body-service {
+  display: flex;
+  justify-content: center;
+}
+
+.card-body-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-body-header h1 {
+  color: white;
+  font-size: 22px;
+}
+
+.card-body-header p {
+  color: white;
+  font-size: 12px;
+}
