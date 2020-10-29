@@ -17,17 +17,15 @@ class ToiletsController < ApplicationController
   def create
     @toilet = Toilet.new(toilet_params)
     if @toilet.save
-      redirect_to toilet_path(@toilet)
+      redirect_to toilets_path
     else
       render 'new'
     end
   end
 
-  def show
-  end
+  def show; end
 
-  def edit
-  end
+  def edit; end
 
   def update
     @toilet.update(toilet_params)
