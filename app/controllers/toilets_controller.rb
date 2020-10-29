@@ -2,12 +2,7 @@ class ToiletsController < ApplicationController
   before_action :set_toilet, only: [:show, :edit, :update, :destroy]
 
   def index
-    if params[:query].present?
-      @query = params[:query]
-      @toilets = Toilet.where("name iLike '%#{params[:query]}%'")
-    else
-      @toilets = Toilet.all
-    end
+    @toilets = Toilet.all
   end
 
   def new
@@ -16,6 +11,7 @@ class ToiletsController < ApplicationController
 
   def create
     @toilet = Toilet.new(toilet_params)
+    @toilet.user = current_user
     if @toilet.save
       redirect_to toilets_path
     else
