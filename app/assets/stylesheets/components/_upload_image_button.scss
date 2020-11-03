@@ -1,0 +1,14 @@
+.upload-photo {
+  border: 1px solid #d3d3d3;
+  padding: 8px 24px;
+  cursor: pointer;
+  font-weight: 500;
+  background: #819231;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.upload-photo:hover {
+  background: #98B800;
+  color: white;
+}
