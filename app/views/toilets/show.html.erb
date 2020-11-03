@@ -6,6 +6,9 @@
         <h1><%= @toilet.name %></h1>
         <p><%= @toilet.address %></p>
         <p><%= @toilet.description %></p>
+        <% @toilet.photos.each do |photo| %>
+          <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+        <% end %>
       </div>
     </div>
   </div>
