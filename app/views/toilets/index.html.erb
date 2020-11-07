@@ -1,19 +1,22 @@
 <div class="home-banner">
   <div class="home-banner-items">
     <p>We have <%= Toilet.count %> toilet/s for you nearby.</p>
-    <h1>This is the toilets near you</h1>
+    <h1>Below are the toilets near you</h1>
   </div>
 </div>
 
-<div class="row">
+<div class="card-home">
   <% @toilets.each do |toilet| %>
-    <div class="card-home">
-      <div class="card-service">
-        <div class="toilet-card-image" style="background-image: url('<%= toilet.photos %>')"></div>
-        <%= toilet.name %>
-        <%= toilet.address %>
-        <%= link_to 'More info', toilet_path(toilet) %>
+  <div class="toilet-card-service" >
+    <div class="toilet-card-image" style="background-image: url('<%= toilet.photos %>')"></div>
+    <div class="card-service-infos">
+      <div>
+        <h1><%= toilet.name %></h1>
+        <p><%= toilet.address %></p>
+        <%= link_to 'more info', toilet_path(toilet) %>
       </div>
     </div>
+  </div>
   <% end %>
 </div>
+
