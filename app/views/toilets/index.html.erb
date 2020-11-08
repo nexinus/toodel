@@ -5,3 +5,25 @@
   </div>
 </div>
 
+<div class="container">
+  <div class="row" style="padding-top: 16px">
+    <% @toilets.each do |toilet| %>
+      <div class="col-12 col-md-6 col-lg-3" style="padding-bottom: 8px">
+        <% if toilet.photos.attached? %>
+          <% background_url = cl_image_path toilet.photos.first.key, width: 400, height: 500, crop: :fill %>
+        <% else %>
+          <% background_url = 'https://source.unsplash.com/500x400/?toilet' %>
+        <% end %>
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= background_url %>');">
+          <div class="card-description">
+            <div>
+              <h2><%= toilet.name %></h2>
+              <p><%= toilet.address %></p>
+            </div>
+          </div>
+          <%= link_to "", toilet_path(toilet), class: 'card-link' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
