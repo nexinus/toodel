@@ -32,7 +32,6 @@
   margin: 0;
 }
 
-
 .card-service .card-service-infos {
   padding: 16px;
   display: flex;
@@ -72,41 +71,4 @@
 .card-body-header p {
   color: white;
   font-size: 12px;
-}
-
-.toilet-card-image {
-  height: 150px;
-  background-position: center;
-  background-size: cover;
-}
-
-.toilet-card-service {
-  overflow: hidden;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border-radius: 16px;
-  margin: 8px;
-  margin-top: 16px;
-  margin-bottom: 32px;
-  width: 250px;
-}
-
-.toilet-card-service h1 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-}
-
-.toilet-card-service p {
-  font-size: 12px;
-  opacity: .7;
-  margin: 0;
-}
-
-.toilet-card-service .card-service-infos {
-  padding: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  position: relative;
 }

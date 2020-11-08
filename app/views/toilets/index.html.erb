@@ -5,18 +5,3 @@
   </div>
 </div>
 
-<div class="card-home">
-  <% @toilets.each do |toilet| %>
-  <div class="toilet-card-service" >
-    <div class="toilet-card-image" style="background-image: url('<%= toilet.photos %>')"></div>
-    <div class="card-service-infos">
-      <div>
-        <h1><%= toilet.name %></h1>
-        <p><%= toilet.address %></p>
-        <%= link_to 'more info', toilet_path(toilet) %>
-      </div>
-    </div>
-  </div>
-  <% end %>
-</div>
-

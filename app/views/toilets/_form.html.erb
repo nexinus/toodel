@@ -1,8 +1,14 @@
-<%= simple_form_for(toilet) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :address %>
-  <%= f.input :description %>
-  <%= f.input :photos, as: :file, input_html: { multiple: true, class: 'd-none', class: 'hidden', id: 'photo-input' }, label_html: { class: 'upload-photo'}, label: '📷 Photo/s Upload' %>
-  <%= image_tag "", width: 100, class: "hidden", id: "photo-preview" %>
-  <%= f.submit %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-6 col-lg-3">
+      <%= simple_form_for(toilet) do |f| %>
+        <%= f.input :name %>
+        <%= f.input :address %>
+        <%= f.input :description %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true, class: 'd-none', class: 'hidden', id: 'photo-input' }, label_html: { class: 'upload-photo'}, label: '📷 Photo/s Upload' %>
+        <%= image_tag "", width: 100, class: "hidden", id: "photo-preview" %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>
