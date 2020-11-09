@@ -1,13 +1,20 @@
+<div class="home-banner">
+  <div class="home-banner-items">
+    <h1>Create a toilet</h1>
+    <p>Fill in the form below</p>
+  </div>
+</div>
+
 <div class="container">
   <div class="row">
-    <div class="col-12 col-md-6 col-lg-3">
+    <div class="col-12 col-md-8 col-lg-8">
       <%= simple_form_for(toilet) do |f| %>
         <%= f.input :name %>
         <%= f.input :address %>
         <%= f.input :description %>
         <%= f.input :photos, as: :file, input_html: { multiple: true, class: 'd-none', class: 'hidden', id: 'photo-input' }, label_html: { class: 'upload-photo'}, label: '📷 Photo/s Upload' %>
         <%= image_tag "", width: 100, class: "hidden", id: "photo-preview" %>
-        <%= f.submit %>
+        <%= f.submit class: 'btn btn-success' %>
       <% end %>
     </div>
   </div>

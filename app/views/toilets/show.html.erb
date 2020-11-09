@@ -1,15 +1,15 @@
 <div class="home-banner">
   <div class="home-banner-items">
-    <h1>This is the toilet show page</h1>
-    <div class="toilet-show-card">
-      <div>
-        <h1><%= @toilet.name %></h1>
-        <p><%= @toilet.address %></p>
-        <p><%= @toilet.description %></p>
-        <% @toilet.photos.each do |photo| %>
-          <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-        <% end %>
-      </div>
-    </div>
+    <h1><%= @toilet.name %></h1>
+    <p><%= @toilet.address %></p>
+  </div>
+</div>
+
+<div class="toilet-show-card">
+  <div>
+    <p><%= @toilet.description %></p>
+    <% @toilet.photos.each do |photo| %>
+      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
   </div>
 </div>
