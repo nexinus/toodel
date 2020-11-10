@@ -1,15 +1,23 @@
-<div class="home-banner">
+<div class="short-banner">
   <div class="home-banner-items">
     <h1><%= @toilet.name %></h1>
     <p><%= @toilet.address %></p>
   </div>
 </div>
 
-<div class="toilet-show-card">
-  <div>
-    <p><%= @toilet.description %></p>
+<div class="card-toilet">
+  <div style="display: flex">
     <% @toilet.photos.each do |photo| %>
       <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
     <% end %>
   </div>
+  <div class="card-toilet-infos">
+    <div>
+      <h2>Hosted by...</h2>
+      <p><%= @toilet.description %></p>
+    </div>
+    <h2 class="card-toilet-pricing">£0.99</h2>
+    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-toilet-user avatar-bordered" />
+  </div>
 </div>
+
