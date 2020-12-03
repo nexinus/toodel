@@ -33,7 +33,6 @@ gem 'autoprefixer-rails'
 gem 'cloudinary'
 gem 'faker'
 gem 'font-awesome-sass'
-# gem 'pundit'
 gem 'simple_form'
 
 group :development, :test do
@@ -64,3 +63,5 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem "pundit", "~> 2.1"
