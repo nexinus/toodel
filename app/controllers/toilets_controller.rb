@@ -2,16 +2,18 @@ class ToiletsController < ApplicationController
   before_action :set_toilet, only: [:show, :edit, :update, :destroy]
 
   def index
-    @toilets = Toilet.all
+    @toilets = policy_scope(Toilet).order(created_at: :desc)
   end
 
   def new
-    @toilet = Toilet.new
+    @toilet = current_user.toilets.new
+    authorize @toilet
   end
 
   def create
-    @toilet = Toilet.new(toilet_params)
-    @toilet.user = current_user
+    @toilet = current_user.toilet.new(toilet_params)
+    authorize @toilet
+    # @toilet.user = current_user
     if @toilet.save
       redirect_to toilets_path
     else
@@ -23,12 +25,14 @@ class ToiletsController < ApplicationController
 
   def edit; end
 
-  def update
+  def update?
+    record.user == user
     @toilet.update(toilet_params)
     redirect_to toilet_path(@toilet)
   end
 
-  def destroy
+  def destroy?
+    record.user == user
     @toilet.destroy
     redirect_to toilets_path
   end
@@ -37,6 +41,7 @@ class ToiletsController < ApplicationController
 
   def set_toilet
     @toilet = Toilet.find(params[:id])
+    authorize @toilet
   end
 
   def toilet_params

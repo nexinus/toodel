@@ -1,1 +1,3 @@
-<%= render "form", toilet: @toilet %>
+<% if policy(Toilet).create? %>
+  <%= render "form", toilet: @toilet %>
+<% end %>
