@@ -11,7 +11,7 @@ class ToiletsController < ApplicationController
   end
 
   def create
-    @toilet = current_user.toilet.new(toilet_params)
+    @toilet = current_user.toilets.new(toilet_params)
     authorize @toilet
     # @toilet.user = current_user
     if @toilet.save
