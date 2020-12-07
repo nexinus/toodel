@@ -17,7 +17,7 @@ class ToiletPolicy < ApplicationPolicy
     record.user == user # Only toilet creator can update it
   end
 
-  def destroy
+  def destroy?
     record.user == user # Only toilet creator can destroy it
   end
 end

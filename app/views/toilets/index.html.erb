@@ -22,10 +22,10 @@
             </div>
           </div>
           <%= link_to "", toilet_path(toilet), class: 'card-link' %>
-          <% if policy(toilet).destroy? %>
-            <%= link_to 'Destroy', toilet, method: :delete, data: { confirm: 'Are you sure?' } %>
-          <% end %>
         </div>
+        <% if policy(toilet).destroy? %>
+          <%= link_to 'Remove', toilet, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
       </div>
     <% end %>
   </div>
