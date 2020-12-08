@@ -15,6 +15,8 @@ class ToiletPolicy < ApplicationPolicy
 
   def update?
     record.user == user # Only toilet creator can update it
+    # - record: the toilet passed to the `authorize` method in controller
+    # - user:   the `current_user` signed in with Devise.
   end
 
   def destroy?

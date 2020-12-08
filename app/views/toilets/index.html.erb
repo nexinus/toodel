@@ -26,6 +26,9 @@
         <% if policy(toilet).destroy? %>
           <%= link_to 'Remove', toilet, method: :delete, data: { confirm: 'Are you sure?' } %>
         <% end %>
+        <% if policy(toilet).edit? %>
+          <%= link_to "Update", edit_toilet_path(toilet) %>
+        <% end %>
       </div>
     <% end %>
   </div>

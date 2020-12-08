@@ -1,9 +1,5 @@
 <div class="short-banner">
   <div class="home-banner-items">
-    <% @toilets.each do |toilet| %>
-      <% if policy(toilet).edit? %>
-        <%= render "form", toilet: @toilet %>
-      <% end %>
-    <% end %>
+    <%= render "form", toilet: @toilet %>
   </div>
 </div>
