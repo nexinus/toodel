@@ -15,8 +15,11 @@
     <div>
       <h2>Hosted by...</h2>
       <p><%= @toilet.description %></p>
-      <% if policy(@toilet).edit? %>
-        <%= link_to "Update", edit_toilet_path(@toilet) %>
+      <% if policy(@toilet).update? %>
+        <%= link_to 'Edit', edit_toilet_path(@toilet) %>
+      <% end %>
+      <% if policy(@toilet).destroy? %>
+        <%= link_to 'Remove', @toilet, method: :delete, data: { confirm: 'Are you sure?' } %>
       <% end %>
     </div>
     <h2 class="card-toilet-pricing">£0.99</h2>

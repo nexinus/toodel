@@ -25,14 +25,12 @@ class ToiletsController < ApplicationController
 
   def edit; end
 
-  def update?
-    record.user == user
+  def update
     @toilet.update(toilet_params)
     redirect_to toilet_path(@toilet)
   end
 
-  def destroy?
-    record.user == user
+  def destroy
     @toilet.destroy
     redirect_to toilets_path
   end

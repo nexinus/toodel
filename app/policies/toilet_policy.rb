@@ -2,15 +2,16 @@ class ToiletPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
+      # scope.where(user: user)
     end
   end
 
   def show?
-    return true # Anyone can view a toilet
+    true # Anyone can view a toilet
   end
 
   def create?
-    return true # Anyone can create a toilet
+    true # Anyone can create a toilet
   end
 
   def update?

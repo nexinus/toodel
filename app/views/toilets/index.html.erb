@@ -21,7 +21,9 @@
               <p><%= toilet.address %></p>
             </div>
           </div>
-          <%= link_to "", toilet_path(toilet), class: 'card-link' %>
+          <% if policy(toilet).show? %>
+            <%= link_to "", toilet_path(toilet), class: 'card-link' %>
+          <% end %>
         </div>
       </div>
     <% end %>
