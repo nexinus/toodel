@@ -6,7 +6,7 @@ class ToiletPolicy < ApplicationPolicy
   end
 
   def show?
-    true # Anyone can view a toilet
+    return true # Anyone can view a toilet
   end
 
   def create?

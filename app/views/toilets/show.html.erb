@@ -15,6 +15,9 @@
     <div>
       <h2>Hosted by...</h2>
       <p><%= @toilet.description %></p>
+      <% if policy(@toilet).edit? %>
+        <%= link_to "Update", edit_toilet_path(@toilet) %>
+      <% end %>
     </div>
     <h2 class="card-toilet-pricing">£0.99</h2>
     <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-toilet-user avatar-bordered" />
