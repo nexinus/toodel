@@ -12,8 +12,8 @@ class ToiletsController < ApplicationController
 
   def create
     @toilet = current_user.toilets.new(toilet_params)
-    authorize @toilet
     # @toilet.user = current_user
+    authorize @toilet
     if @toilet.save
       redirect_to toilets_path
     else
