@@ -1,6 +1,5 @@
 .home-banner {
-  background: url(home_banner.jpg);
-  // background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(1, 1, 1, 0.5) 50%), url(home_banner.jpg);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(1, 1, 1, 0.5) 50%), url(home_banner.jpg);
   background-size: cover;
   height: 100vh;
   color: #eee;
@@ -18,8 +17,7 @@ p {
 }
 
 .short-banner {
-  background: url(home_banner.jpg);
-  // background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(1, 1, 1, 0.5) 50%), url(home_banner.jpg);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(1, 1, 1, 0.5) 50%), url(home_banner.jpg);
   background-size: cover;
   height: 50vh;
   color: #eee;
