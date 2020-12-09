@@ -3,6 +3,14 @@ class ToiletsController < ApplicationController
 
   def index
     @toilets = policy_scope(Toilet).order(created_at: :desc)
+
+    # the `geocoded` scope filters only toilets with coordinates (latitude & longitude)
+    @markers = @toilets.geocoded.map do |toilet|
+      {
+        lat: toilet.latitude,
+        lng: toilet.longitude
+      }
+    end
   end
 
   def new
