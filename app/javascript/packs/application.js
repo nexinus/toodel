@@ -30,6 +30,7 @@ import "bootstrap";
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 import { previewImageOnFileSelect } from '../components/photo_preview';
 import { initMapbox } from '../plugins/init_mapbox';
+import { initAutocomplete } from '../plugins/init_autocomplete';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -37,4 +38,5 @@ document.addEventListener('turbolinks:load', () => {
   initUpdateNavbarOnScroll();
   previewImageOnFileSelect();
   initMapbox();
+  initAutocomplete();
 });
