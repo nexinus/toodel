@@ -2,9 +2,8 @@ class ToiletsController < ApplicationController
   before_action :set_toilet, only: [:show, :edit, :update, :destroy]
 
   def index
-    @toilets = policy_scope(Toilet).order.where.not(created_at: :desc, latitude: nil, longitude: nil)
-    # @toilets = policy_scope(Toilet).where.not(latitude: nil, longitude: nil)
-    # @toilets = Toilet.where.not(latitude: nil, longitude: nil)
+    # @toilets = policy_scope(Toilet).order.where.not(created_at: :desc, latitude: nil, longitude: nil)
+    @toilets = policy_scope(Toilet).where.not(latitude: nil, longitude: nil)
 
     # the `geocoded` scope filters only toilets with coordinates (latitude & longitude)
     @markers = @toilets.geocoded.map do |toilet|
