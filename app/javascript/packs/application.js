@@ -34,8 +34,8 @@ import { initUpdateNavbarOnScroll } from '../components/navbar';
 import { previewImageOnFileSelect } from '../components/photo_preview';
 // import { initMapbox } from '../plugins/init_mapbox';
 import { initAutocomplete } from '../plugins/init_autocomplete';
-import { mapElement } from '../plugins/map';
-import { autocomplete } from '../components/autocomplete';
+// import { mapElement } from '../plugins/map';
+// import { autocomplete } from '../components/autocomplete';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -45,5 +45,5 @@ document.addEventListener('turbolinks:load', () => {
   // initMapbox();
   initAutocomplete();
   // mapElement();
-  autocomplete();
+  // autocomplete();
 });
