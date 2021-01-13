@@ -2,6 +2,16 @@
   <div class="home-banner-items">
     <p>We have <%= Toilet.count %> toilet/s for you nearby.</p>
     <h1>Below are the toilets near you</h1>
+
+    <%= form_tag toilets_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a toilet"
+      %>
+      <%= submit_tag "Search", class: "btn btn-flat" %>
+    <% end %>
+
   </div>
 </div>
 
