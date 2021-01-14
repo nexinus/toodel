@@ -2,14 +2,10 @@ class ToiletsController < ApplicationController
   before_action :set_toilet, only: [:show, :edit, :update, :destroy]
 
   def index
-    if params[:query].present?
-      sql_query = "name @@ :query OR description @@ :query"
-      # @toilets = policy_scope(Toilet).order.where.not(created_at: :desc, latitude: nil, longitude: nil)
-      @toilets = policy_scope(Toilet).where.not(latitude: nil, longitude: nil, sql_query: params[:query])
-    else
-      @toilets = policy_scope(Toilet).all
-    end
-    # the `geocoded` scope filters only toilets with coordinates (latitude & longitude)
+    @toilets = policy_scope(Toilet).order(created_at: :desc)
+
+    # @toilets = policy_scope(Toilet).order(created_at: :desc).where.not(latitude: nil, longitude: nil)
+    @toilets = policy_scope(Toilet).where.not(latitude: nil, longitude: nil)
     @markers = @toilets.map do |toilet|
       {
         lat: toilet.latitude,
@@ -19,6 +15,13 @@ class ToiletsController < ApplicationController
         # (you will also need to create the partial "/toilets/map_box")
       }
     end
+
+    if params[:query].present?
+      @toilets = policy_scope(Toilet).search_by_name_and_description(params[:query])
+    else
+      @toilets = policy_scope(Toilet).all
+    end
+
   end
 
   def new

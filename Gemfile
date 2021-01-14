@@ -34,6 +34,7 @@ gem 'cloudinary'
 gem 'faker'
 gem 'font-awesome-sass'
 gem 'geocoder'
+gem 'pg_search'
 gem 'simple_form'
 
 group :development, :test do
