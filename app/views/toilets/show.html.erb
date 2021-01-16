@@ -29,6 +29,10 @@
           <% end %>
         <% end %>
       </div>
+      <%= simple_form_for([ @toilet, @review ]) do |f| %>
+        <%= f.input :content, as: :text %>
+        <%= f.button :submit, class: "btn btn-flat" %>
+      <% end %>
       <br>
       <%= link_to 'Back', toilets_path, class: "btn btn-flat" %>
       <% if policy(@toilet).update? %>
