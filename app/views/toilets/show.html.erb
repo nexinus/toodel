@@ -25,7 +25,7 @@
           Be the first to leave a review for <%= @toilet.name %>
         <% else %>
           <% @toilet.reviews.each do |review| %>
-            <p><%= review.content %></p>
+            <p id="review-<%= review.id %>"><%= review.content %></p>
           <% end %>
         <% end %>
       </div>
