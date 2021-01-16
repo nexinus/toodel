@@ -3,6 +3,10 @@ class ToiletsController < ApplicationController
 
   def index
     @toilets = policy_scope(Toilet).order(created_at: :desc)
+    respond_to do |format|
+      format.html
+      format.json { render json: { toilets: @toilets } }
+    end
 
     # @toilets = policy_scope(Toilet).order(created_at: :desc).where.not(latitude: nil, longitude: nil)
     @toilets = policy_scope(Toilet).where.not(latitude: nil, longitude: nil)
