@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
+  before_action :set_counter
   before_action :authenticate_user!
   include Pundit
 
@@ -29,6 +30,10 @@ class ApplicationController < ActionController::Base
   # end
 
   private
+
+  def set_counter
+    @toilet_count = Toilet.count
+  end
 
   def skip_pundit?
     devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
