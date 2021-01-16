@@ -32,7 +32,7 @@
               </div>
             </div>
             <% if policy(toilet).show? %>
-              <%= link_to "", toilet_path(toilet), class: 'card-link' %>
+              <%= link_to toilet.name, toilet_path(toilet), class: 'card-link' %>
             <% end %>
           </div>
         </div>
