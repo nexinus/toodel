@@ -8,15 +8,13 @@ class ToiletsController < ApplicationController
       format.json { render json: { toilets: @toilets } }
     end
 
-    # @toilets = policy_scope(Toilet).order(created_at: :desc).where.not(latitude: nil, longitude: nil)
-    @toilets = policy_scope(Toilet).where.not(latitude: nil, longitude: nil)
-    @markers = @toilets.map do |toilet|
+    @toilets = Toilet.all
+
+    # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
+    @markers = @toilets.geocoded.map do |toilet|
       {
         lat: toilet.latitude,
-        lng: toilet.longitude,
-        infoWindow: { content: render_to_string(partial: "/toilets/map_box", locals: { toilet: toilet }) }
-        # Uncomment the above line if you want each of your markers to display a info window when clicked
-        # (you will also need to create the partial "/toilets/map_box")
+        lng: toilet.longitude
       }
     end
 
