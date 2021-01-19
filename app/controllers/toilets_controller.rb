@@ -8,9 +8,9 @@ class ToiletsController < ApplicationController
       format.json { render json: { toilets: @toilets } }
     end
 
-    @toilets = Toilet.all
+    @toilets = policy_scope(Toilet).where.not(latitude: nil, longitude: nil)
 
-    # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
+    # the `geocoded` scope filters only toilets with coordinates (latitude & longitude)
     @markers = @toilets.geocoded.map do |toilet|
       {
         lat: toilet.latitude,
