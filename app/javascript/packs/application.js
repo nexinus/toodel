@@ -23,7 +23,7 @@ require("channels")
 // ----------------------------------------------------
 
 // CSS
-// import 'mapbox-gl/dist/mapbox-gl.css';
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 // External imports
 import "bootstrap";
@@ -32,7 +32,7 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 import { previewImageOnFileSelect } from '../components/photo_preview';
-// import { initMapbox } from '../plugins/init_mapbox';
+import { initMapbox } from '../plugins/init_mapbox';
 import { initAutocomplete } from '../plugins/init_autocomplete';
 // import { mapElement } from '../plugins/map';
 // import { autocomplete } from '../components/autocomplete';
@@ -42,7 +42,7 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   initUpdateNavbarOnScroll();
   previewImageOnFileSelect();
-  // initMapbox();
+  initMapbox();
   initAutocomplete();
   // mapElement();
   // autocomplete();
