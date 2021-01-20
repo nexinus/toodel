@@ -40,20 +40,20 @@
     </div>
   </div>
 
-<div id="map"
-     style="width: 100%; height: 600px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  <div id="map"
+       style="width: 100%; height: 600px;"
+       data-markers="<%= @markers.to_json %>"
+       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 
 </div>
 <div class="container"><%= link_to 'Back to home', root_path, class: "btn btn-flat" %></div>
-<div class="container">
-<!--   <div class="flex-center mt-4" data-controller="counter">
+<!-- <div class="container">
+  <div class="flex-center mt-4" data-controller="counter">
     <div class="counter">
       <span data-target="counter.count"><%= @toilet_count %></span>
     </div>
 
     <button class="btn btn-outline-secondary"
             data-action="click->counter#refresh">Refresh counter</button>
-  </div> -->
-</div>
+  </div>
+</div> -->
