@@ -33,6 +33,7 @@
             <%= f.input :photo, as: :file, input_html: { class: 'hidden', class: 'd-none', id: 'photo-input' }, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo' %>
             <%= image_tag "", width: 100, class: "hidden", id: "photo-preview" %>
           </div>
+          <br>
           <div class="form-actions">
             <%= f.button :submit, "Sign up", class: "btn btn-success" %>
           </div>
