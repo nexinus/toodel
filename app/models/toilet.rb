@@ -1,7 +1,7 @@
 class Toilet < ApplicationRecord
   belongs_to :user
   has_many :reviews, dependent: :destroy
-  has_many_attached :photos
+  has_many_attached :photos, dependent: :destroy
   validates :name, presence: true
   validates :address, presence: true
   validates :description, presence: true
