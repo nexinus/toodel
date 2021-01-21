@@ -18,8 +18,13 @@
           <%= link_to "Messages", "#", class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
-          <%= image_tag "ZM_avatar.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% if current_user.photo.attached? %>
+            <%= cl_image_tag current_user.photo.key, width: 40, height: 40, crop: :fill, class: "avatar dropdown-toggle", style: "cursor: pointer", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <% else %>
+            <%= image_tag "https://api.iconify.design/carbon:user-avatar-filled-alt.svg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% end %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <%= link_to "Messages", chatrooms_path, class: "dropdown-item" %>
             <%= link_to "Book a toilet", toilets_path, class: "dropdown-item" %>
             <% if policy(Toilet).create? %>
               <%= link_to "Create a toilet", new_toilet_path, class: "dropdown-item" %>
