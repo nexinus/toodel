@@ -1,10 +1,10 @@
 class MessagesController < ApplicationController
-
   def new; end
 
   def create
     @chatroom = Chatroom.find(params[:chatroom_id])
-    @message = Message.new(message_params)
+    @message = policy(Message).new(message_params)
+    authorize @message
     @message.chatroom = @chatroom
     @message.user = current_user
     if @message.save
@@ -17,7 +17,7 @@ class MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:messages).permit(:content)
+    params.require(:message).permit(:content)
   end
 
 end
