@@ -1,5 +1,13 @@
 <div class="short-banner">
   <div class="home-banner-items">
-    <h1>General Chatroom</h1>
+    <h1>Enter Chatroom</h1>
   </div>
+</div>
+<br>
+<div class="container">
+  <% @chatrooms.each do |chatroom| %>
+    <% if policy(chatroom).show? %>
+      <%= link_to chatroom.name, chatroom_path(chatroom), class: "btn btn-flat" %>
+    <% end %>
+  <% end %>
 </div>
