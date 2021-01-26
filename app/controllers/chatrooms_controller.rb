@@ -7,6 +7,7 @@ class ChatroomsController < ApplicationController
 
   def show
     @message = Message.new
+    @chatrooms = Chatroom.all
   end
 
   private
