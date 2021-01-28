@@ -20,7 +20,7 @@ class ToiletsController < ApplicationController
     end
 
     if params[:query].present?
-      @toilets = policy_scope(Toilet).search_by_name_and_description(params[:query])
+      @toilets = policy_scope(Toilet).search_by_name_description_address(params[:query])
     else
       @toilets = policy_scope(Toilet).all
     end
