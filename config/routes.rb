@@ -12,4 +12,10 @@ Rails.application.routes.draw do
   resources :chatrooms, only: [:show, :index] do
     resources :messages, only: :create
   end
+
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      resources :toilets, only: [ :index, :show ]
+    end
+  end
 end
