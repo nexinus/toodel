@@ -11,7 +11,8 @@ class ToiletPolicy < ApplicationPolicy
   end
 
   def create?
-    true # Anyone can create a toilet
+    # true # Anyone can create a toilet
+    !user.nil? # Any logged in user can create a toilet
   end
 
   def update?
@@ -21,6 +22,7 @@ class ToiletPolicy < ApplicationPolicy
   end
 
   def destroy?
-    record.user == user # Only toilet creator can destroy it
+    # record.user == user # Only toilet creator can destroy it
+    update? # same logic
   end
 end

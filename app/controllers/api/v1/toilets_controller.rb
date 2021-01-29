@@ -1,6 +1,6 @@
 class Api::V1::ToiletsController < Api::V1::BaseController
   acts_as_token_authentication_handler_for User, except: [ :index, :show ]
-  before_action :set_toilet, only: [ :show, :update ]
+  before_action :set_toilet, only: [ :show, :update, :destroy ]
 
   def index
     @toilets = policy_scope(Toilet)
@@ -14,6 +14,23 @@ class Api::V1::ToiletsController < Api::V1::BaseController
     else
       render_error
     end
+  end
+
+  def create
+    @toilet = Toilet.new(toilet_params)
+    @toilet.user = current_user
+    authorize @toilet
+    if @toilet.save
+      render :show, status: :created
+    else
+      render_error
+    end
+  end
+
+  def destroy
+    @toilet.destroy
+    head :no_content
+    # No need to create a `destroy.json.jbuilder` view
   end
 
   private
