@@ -36,6 +36,8 @@ gem 'faker'
 gem 'font-awesome-sass'
 gem 'geocoder'
 gem 'pg_search'
+gem 'sidekiq'
+gem 'sidekiq-failures', '~> 1.0'
 gem 'simple_form'
 gem 'simple_token_authentication'
 
