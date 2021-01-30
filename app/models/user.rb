@@ -10,4 +10,12 @@ class User < ApplicationRecord
   has_one_attached :photo, dependent: :destroy
   validates :first_name, presence: true
   validates :last_name, presence: true
+
+  after_commit :async_update # Run on create & update
+
+  private
+
+  def async_update
+    UpdateUserJob.perform_later(self)
+  end
 end
