@@ -11,11 +11,11 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
 
-  after_commit :async_update # Run on create & update
+  # after_commit :async_update # Run on create & update
 
-  private
+  # private
 
-  def async_update
-    UpdateUserJob.perform_later(self)
-  end
+  # def async_update
+  #   UpdateUserJob.perform_later(self)
+  # end
 end
