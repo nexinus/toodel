@@ -1,0 +1,5 @@
+meta_product_name: "Toodel"
+meta_title: "Toodel - Hold no more, find a toilet now"
+meta_description: "Find the nearest toilet next to you. Toodel is ranked as the world's best toilet finder and has relieved thousands of people around the world"
+meta_image: "logo_name.png" # should exist in `app/assets/images/`
+# twitter_account: "@product_twitter_account"   # required for Twitter Cards
