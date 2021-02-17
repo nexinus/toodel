@@ -12,10 +12,15 @@ class User < ApplicationRecord
   validates :last_name, presence: true
 
   after_commit :async_update # Run on create & update
+  after_create :send_welcome_email
 
   private
 
   def async_update
     UpdateUserJob.perform_later(self)
+  end
+
+  def send_welcome_email
+    UserMailer.with(user: self).welcome.deliver_now
   end
 end
