@@ -64,8 +64,8 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method     = :postmark
   config.action_mailer.postmark_settings   = { api_token: ENV['POSTMARK_API_TOKEN'] }
-  config.action_mailer.default_url_options = { host: "toodel.herokuapp.com" }
-  # or your custom domain name eg. "www.toodel.de"
+  config.action_mailer.default_url_options = { host: "www.toodel.de" }
+  # or your custom domain name eg. "www.toodel.de" or "toodel.herokuapp.com"
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
