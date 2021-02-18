@@ -13,6 +13,7 @@ class User < ApplicationRecord
 
   after_commit :async_update # Run on create & update
   after_create :send_welcome_email
+  after_create :subscribe_to_newsletter
 
   private
 
@@ -22,5 +23,9 @@ class User < ApplicationRecord
 
   def send_welcome_email
     UserMailer.with(user: self).welcome.deliver_now
+  end
+
+  def subscribe_to_newsletter
+    SubscribeToNewsletterService.new(self).call
   end
 end
