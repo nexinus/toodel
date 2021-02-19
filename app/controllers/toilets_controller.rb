@@ -37,8 +37,8 @@ class ToiletsController < ApplicationController
     # @toilet.user = current_user
     authorize @toilet
     if @toilet.save
-      mail = ToiletMailer.with(toilet: @toilet).create_confirmation
-      mail.deliver_now
+      # mail = ToiletMailer.with(toilet: @toilet).create_confirmation
+      # mail.deliver_now
       redirect_to toilets_path
     else
       render 'new'
