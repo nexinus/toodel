@@ -80,7 +80,11 @@
   background-position: center;
   color: white;
   position: relative;
-  transition: background 0.3s ease;
+  transition: all ease .3s;
+}
+
+.highlight {
+  box-shadow: 0 0 0 1rem #98B800;
 }
 
 .card-description {

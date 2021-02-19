@@ -71,6 +71,8 @@ const initMapbox = () => {
     fitMapToMarkers(map, markers);
     // We give the array of marker to a new function called "openInfoWindow"
     openInfoWindow(mapMarkers);
+    map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
+                                        mapboxgl: mapboxgl }));
   }
 };
 
