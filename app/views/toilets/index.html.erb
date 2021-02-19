@@ -24,7 +24,7 @@
           <% else %>
             <% background_url = 'https://source.unsplash.com/500x400/?toilet' %>
           <% end %>
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= background_url %>');">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= background_url %>');" data-toilet-id="<%= toilet.id %>">
             <div class="card-description">
               <div>
                 <h2><%= toilet.name %></h2>

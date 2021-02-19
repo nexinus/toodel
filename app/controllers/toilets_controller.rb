@@ -15,7 +15,8 @@ class ToiletsController < ApplicationController
       {
         lat: toilet.latitude,
         lng: toilet.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { toilet: toilet })
+        infoWindow: render_to_string(partial: "info_window", locals: { toilet: toilet }),
+        id: toilet.id
       }
     end
 
