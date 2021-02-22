@@ -11,6 +11,7 @@
     "flatpickr": "^4.6.9",
     "gmaps": "^0.4.25",
     "jquery": "^3.5.1",
+    "jquery-bar-rating": "^1.2.2",
     "mapbox-gl": "^2.0.0",
     "places.js": "^1.19.0",
     "popper.js": "^1.16.1",
