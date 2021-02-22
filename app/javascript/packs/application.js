@@ -24,7 +24,7 @@ require("channels")
 
 // CSS
 import 'mapbox-gl/dist/mapbox-gl.css';
-import 'flatpickr/dist/flatpickr.min.css';
+// import 'flatpickr/dist/flatpickr.min.css';
 
 // External imports
 import "bootstrap";
@@ -36,6 +36,7 @@ import { previewImageOnFileSelect } from '../components/photo_preview';
 import { initMapbox } from '../plugins/init_mapbox';
 import { initAutocomplete } from '../plugins/init_autocomplete';
 import { initChatroomCable } from '../channels/chatroom_channel';
+import { initFlatpickr } from "../plugins/flatpickr";
 import { initStarRating } from '../plugins/init_star_rating';
 
 document.addEventListener('turbolinks:load', () => {
@@ -46,8 +47,8 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initAutocomplete();
   initChatroomCable();
+  initFlatpickr();
   initStarRating();
 });
 
 import "controllers"
-import "../plugins/flatpickr"
