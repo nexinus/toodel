@@ -32,7 +32,8 @@
       <%= simple_form_for([ @toilet, @review ], remote: true) do |f| %>
         <%= f.input :content, as: :text %>
         <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience" %>
-        <%= f.button :submit, class: "btn btn-flat" %>
+<!--         <%= f.button :submit, class: "btn btn-flat" %> -->
+        <%= f.submit "Send your review", class: "btn btn-flat" %>
       <% end %>
       <br>
       <%= link_to 'Back', toilets_path, class: "btn btn-flat" %>
