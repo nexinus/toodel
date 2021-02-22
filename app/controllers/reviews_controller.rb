@@ -7,6 +7,7 @@ class ReviewsController < ApplicationController
     @toilet = Toilet.find(params[:toilet_id])
     @review = Review.new(review_params)
     authorize @review
+    @review.user = current_user
     @review.toilet = @toilet
     if @review.save
       redirect_to toilet_path(@toilet, anchor: "review-#{@review.id}")
