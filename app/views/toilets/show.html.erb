@@ -6,11 +6,13 @@
 </div>
 
 <div class="card-toilet">
+
   <div style="display: flex">
     <% @toilet.photos.each do |photo| %>
       <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
     <% end %>
   </div>
+
   <div class="card-toilet-infos">
     <div>
       <h2>Hosted by <%= @toilet.user.first_name.capitalize %></h2>
