@@ -16,6 +16,16 @@
       <h2>Hosted by <%= @toilet.user.first_name.capitalize %></h2>
       <p><%= @toilet.description %></p>
       <br>
+      <div class="container">
+        <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
+          <%= simple_form_for :search, method: "get" do |f| %>
+            <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker"} %>
+            <%= f.input :ends_at, as: :string, required: false, input_html: {class: "datepicker"} %>
+            <%= f.button :submit, "Go", class: "btn btn-flat" %>
+          <% end %>
+        </div>
+      </div>
+      <br>
       <h2>
         <%= pluralize @toilet.reviews.size, "review" %>
       </h2>
